@@ -1,3 +1,5 @@
+import './index.module.less'
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 

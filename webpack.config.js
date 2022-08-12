@@ -85,6 +85,7 @@ module.exports = {
 		extensions: ['.jsx', '.js', '.tsx', '.ts'],
         alias: {
             '@components': path.resolve(srcPath, 'components'),
+			'@styles': path.resolve(srcPath, 'styles')
         },
 	},
 	devServer: {
