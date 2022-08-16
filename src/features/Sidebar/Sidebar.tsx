@@ -1,3 +1,4 @@
+import Budget from '@assets/Sidebar/budgetsIcon.svg'
 import React from 'react'
 
 import styles from './styles/Sidebar.module.less'
@@ -5,7 +6,10 @@ import styles from './styles/Sidebar.module.less'
 export const Sidebar: React.FC = () => (
 	<div className={ styles.container }>
 		<div className={ styles.pageLink }>
-			first page
+			<div className={ styles.icon }>
+				<Budget />
+			</div>
+			<p>Budgets</p>
 		</div>
 		<div className={ styles.pageLink }>
 			sec page

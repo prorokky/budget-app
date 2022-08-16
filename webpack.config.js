@@ -71,13 +71,18 @@ module.exports = {
                 use: 'babel-loader',
             },
 			{
-				test: /\.(png|jpg|svg|gif|ttf|woff|woff2|eot)$/,
-				type: 'assets',
+				test: /\.(png|jpg|gif|ttf|woff|woff2|eot)$/,
+				type: 'asset',
 				parser: {
 					dataUrlCondition: {
 					  maxSize: 10 * 1024, // 3kb
 					},
 				},
+			},
+			{
+				test: /\.svg$/i,
+				issuer: /\.[jt]sx?$/,
+				use: ['@svgr/webpack'],
 			},
 		]
 	},
@@ -85,7 +90,8 @@ module.exports = {
 		extensions: ['.jsx', '.js', '.tsx', '.ts'],
         alias: {
             '@components': path.resolve(srcPath, 'components'),
-			'@styles': path.resolve(srcPath, 'styles')
+			'@styles': path.resolve(srcPath, 'styles'),
+			'@assets': path.resolve(srcPath, 'assets'),
         },
 	},
 	devServer: {
