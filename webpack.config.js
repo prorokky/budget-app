@@ -92,6 +92,7 @@ module.exports = {
             '@components': path.resolve(srcPath, 'components'),
 			'@styles': path.resolve(srcPath, 'styles'),
 			'@assets': path.resolve(srcPath, 'assets'),
+			'@features': path.resolve(srcPath, 'features'),
         },
 	},
 	devServer: {
