@@ -6,7 +6,7 @@ import styles from './styles/Budgets.module.less'
 export const Budgets: React.FC = () => (
 	<div className={ styles.container }>
 		<div className={ styles.listOfBudgets }>
-			<Header headerName='budgets' />
+			<Header headerName='Budgets' />
 			<p>List of budgets</p>
 			<p>List of budgets</p>
 			<p>List of budgets</p>
