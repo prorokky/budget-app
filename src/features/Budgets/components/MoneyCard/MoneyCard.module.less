@@ -1,0 +1,111 @@
+@import '../../../../styles/_variables.less';
+
+.budgetDetails {
+	.withinBudget {
+		text-align: center;
+		margin: 22px 0px;
+	}
+
+	.moneyCard {
+		margin: 0px 25px;
+		width: calc(100% - 50px);
+		display: flex;
+		justify-content: center;
+		background-color: #FFFFFF;
+		flex-direction: column;
+		border-radius: 6px;
+
+		.top {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			width: 100%;
+
+			.topLeft {
+				width: 50%;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				border-right: 1px solid @p-grey-color;
+				border-bottom: 1px solid @p-grey-color;
+				margin-top: 20px;
+				margin-left: 25px;
+
+				.perDay {
+					background-color: @screens-background-color;
+					border-radius: 6px;
+					border: 1px solid @screens-background-color;
+					color: @p-blue-color;
+					width: 75px;
+					text-align: center;
+				}
+
+				p {
+					color: @p-grey-color;
+					margin-bottom: 10px;
+				}
+			}
+
+			.topRight {
+				width: 50%;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				border-bottom: 1px solid @p-grey-color;
+				margin-top: 20px;
+				margin-right: 25px;
+
+				p {
+					color: @p-grey-color;
+					margin-bottom: 10px;
+				}
+			}
+		}
+
+		.bottom {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+
+			.bottomLeft {
+				width: 50%;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				border-right: 1px solid @p-grey-color;
+				margin-bottom: 10px;
+				margin-left: 25px;
+				padding-top: 10px;
+				padding-bottom: 10px;
+
+				p {
+					color: @p-grey-color;
+					margin-bottom: 10px;
+				}
+			}
+
+			.bottomRight {
+				width: 50%;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				margin-bottom: 10px;
+				margin-right: 25px;
+				padding-top: 10px;
+				padding-bottom: 10px;
+
+				p {
+					color: @p-grey-color;
+					margin-bottom: 10px;
+				}
+			}
+		}
+
+		.daysLeft {
+			display: flex;
+			justify-content: center;
+			color: @p-grey-color;
+			margin-bottom: 10px;
+		}
+	}
+}
