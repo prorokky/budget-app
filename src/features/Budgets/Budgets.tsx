@@ -1,7 +1,7 @@
 import { Button } from '@components/Button'
 import { Header } from '@components/Header'
 import { InfoHeader } from '@components/InfoHeader'
-import { Modal } from '@components/Modal'
+import { ModalComponent } from '@components/Modal'
 import React, { useState } from 'react'
 
 import { BudgetCard, MoneyCard } from './components'
@@ -70,9 +70,12 @@ export const Budgets: React.FC = () => {
 					</div>
 				</div>
 			</div>
-			<Modal isOpen={ isOpenModal } onCloseFunction={ () => closeModal() }>
+			<ModalComponent
+				isOpen={ isOpenModal }
+				closeModal={ () => closeModal() }
+			>
 				<p>test</p>
-			</Modal>
+			</ModalComponent>
 		</div>
 	)
 }
