@@ -13,9 +13,11 @@ const customStyles = {
 		left: '50%',
 		right: 'auto',
 		bottom: 'auto',
-		marginRight: '-50%',
+		padding: '0px',
+		borderRadius: '6px',
+		width: '400px',
+		maxWidth: '100%',
 		transform: 'translate(-50%, -50%)',
-		zIndex: '10',
 	},
 }
 

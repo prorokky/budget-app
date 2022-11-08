@@ -1,3 +1,5 @@
+import Minus from '@assets/Budgets/minus.svg'
+import Plus from '@assets/Budgets/plus.svg'
 import { Button } from '@components/Button'
 import { Header } from '@components/Header'
 import { InfoHeader } from '@components/InfoHeader'
@@ -74,7 +76,27 @@ export const Budgets: React.FC = () => {
 				isOpen={ isOpenModal }
 				closeModal={ () => closeModal() }
 			>
-				<p>test</p>
+				<div className={ styles.modalContainer }>
+					<div className={ styles.top }>
+						{ /* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */ }
+						<p
+							onClick={ () => setOpenModal(false) }
+							className={ styles.back }
+						>Назад</p>
+						<div className={ styles.icons }>
+							<Minus />
+							<Plus />
+						</div>
+						<p className={ styles.categories }>Категория</p>
+					</div>
+					<p className={ styles.date }>14.07.2022, 23:15</p>
+					<input placeholder='RUB' value='' />
+					{ /* TODO: добавить геолокацию покупки
+					<div>
+						гео
+					</div> */ }
+					<p className={ styles.save }>Cохранить</p>
+				</div>
 			</ModalComponent>
 		</div>
 	)
