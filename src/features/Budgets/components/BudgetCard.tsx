@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './BudgetCard.module.less'
+import styles from '../styles/BudgetCard.module.less'
 
 export const BudgetCard: React.FC = () => (
 	<div className={ styles.card }>
