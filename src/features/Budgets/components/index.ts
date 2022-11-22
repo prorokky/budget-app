@@ -1,2 +1,2 @@
-export { BudgetCard } from './BudgetCard/BudgetCard'
-export { MoneyCard } from './MoneyCard/MoneyCard'
+export { BudgetCard } from './BudgetCard'
+export { MoneyCard } from './MoneyCard'

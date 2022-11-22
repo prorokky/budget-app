@@ -88,7 +88,7 @@
 
 		.transactionsHeader {
 			margin-top: 25px;
-			background-color: #FFFFFF;
+			background-color: @white-background-color;
 			border-radius: 6px;
 			width: calc(100% - 50px);
 			margin-bottom: 25px;
@@ -107,7 +107,7 @@
 			.transactionCard {
 				flex: calc(50% - 25px);
 				width: 100%;
-				background-color: #FFFFFF;
+				background-color: @white-background-color;
 				margin-bottom: 25px;
 				border-radius: 6px;
 				align-items: center;
@@ -152,16 +152,30 @@
 
 		.back {
 			color: @p-blue-color;
+
+			&:hover {
+				cursor: pointer;
+			}
 		}
 
 		.icons {
 			display: flex;
 			justify-content: space-between;
 			width: 55px;
+			position: absolute;
+			left: 44%;
+
+			&:hover {
+				cursor: pointer;
+			}
 		}
 
 		.categories {
 			color: @p-blue-color;
+
+			&:hover {
+				cursor: pointer;
+			}
 		}
 	}
 
