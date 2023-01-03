@@ -1,0 +1,35 @@
+@import '../../../styles/_variables.less';
+
+.cards {
+	width: calc(100% - 50px);
+	background-color: @white-background-color;
+	display: flex;
+	flex-direction: column;
+	margin-left: 25px;
+	margin-right: 25px;
+	border-radius: 6px;
+
+	.cardInfo {
+		height: 45px;
+		border-bottom: 1px solid @p-grey-color;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 10px 0 10px;
+
+		.categoryName {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			.icon {
+				margin-right: 10px;
+			}
+		}
+	}
+}
+
+.noBorder {
+	border-bottom: none !important;
+}
