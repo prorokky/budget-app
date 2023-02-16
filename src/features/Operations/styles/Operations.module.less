@@ -1,3 +1,5 @@
+@import '../../../styles/_variables.less';
+
 .container {
 	display: flex;
 	flex-direction: row;
@@ -12,6 +14,8 @@
 		height: 100%;
 		overflow-y: auto;
 		overflow-x: hidden;
+		border-left: 1px solid @p-grey-color;
+		z-index: 1;
 	}
 }
 
