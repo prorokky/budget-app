@@ -1,0 +1,34 @@
+@import '../../../styles/_variables.less';
+
+.container {
+	display: flex;
+	flex-direction: row;
+	width: calc(100% - 272px);
+	height: 100%;
+	overflow-y: auto;
+	
+	.listOfBudgets {
+		width: 450px;
+		height: 100%;
+		overflow-y: auto;
+
+		.budgetsContainer {
+			display: flex;
+			flex-direction: column;
+			margin-top: 75px;
+		}
+	}
+
+	.chartInfo {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		overflow-y: auto;
+		overflow-x: hidden;
+		border-left: 1px solid @p-grey-color;
+		z-index: 1;
+	}
+}
+
+
