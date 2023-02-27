@@ -12,11 +12,26 @@
 	width: 450px;
 	height: 100%;
 	overflow-y: auto;
+	position: relative;
 
 	.budgetsContainer {
 		display: flex;
 		flex-direction: column;
 		margin-top: 75px;
+	}
+
+	.addBudget {
+		position: absolute;
+		bottom: 15px;
+		right: 15px;
+		width: 40px;
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #0056B4;
+		border-radius: 50%;
+		color: white;
 	}
 }
 
@@ -25,13 +40,15 @@
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	border-left: 1px solid @p-grey-color;
 	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 1;
 
 	.budgetNameHeader {
 		padding-bottom: 5px;
 		width: 100%;
 		border-bottom: 2px solid @p-grey-color;
-		border-left: 1px solid @p-grey-color;
 		margin-top: 75px;
 
 		.changeButton {
@@ -66,7 +83,6 @@
 		padding-left: 25px;
 		border-bottom: 1px solid @p-grey-color;
 		height: 50px;
-		border-left: 1px solid @p-grey-color;
 		display: flex;
 
 		p {
@@ -83,7 +99,6 @@
 	.transactions {
 		display: flex;
 		flex-direction: column;
-		border-left: 1px solid @p-grey-color;
 		align-items: center;
 
 		.transactionsHeader {

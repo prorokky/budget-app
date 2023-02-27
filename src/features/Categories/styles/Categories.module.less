@@ -1,3 +1,5 @@
+@import '../../../styles/_variables.less';
+
 .container {
 	display: flex;
 	flex-direction: row;
@@ -12,6 +14,8 @@
 		height: 100%;
 		overflow-y: auto;
 		overflow-x: hidden;
+		border-left: 1px solid @p-grey-color;
+		z-index: 1;
 	}
 }
 
@@ -19,10 +23,25 @@
 	width: 450px;
 	height: 100%;
 	overflow-y: auto;
+	position: relative;
 
 	.categoriesContainer {
 		display: flex;
 		flex-direction: column;
 		margin-top: 105px;
+	}
+
+	.addBudget {
+		position: absolute;
+		bottom: 15px;
+		right: 15px;
+		width: 40px;
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #0056B4;
+		border-radius: 50%;
+		color: white;
 	}
 }

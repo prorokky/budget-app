@@ -23,6 +23,9 @@ export const Budgets: React.FC = () => {
 				<div className={ styles.budgetsContainer }>
 					<BudgetCard />
 				</div>
+				<div className={ styles.addBudget }>
+					+
+				</div>
 			</div>
 			<div className={ styles.budgetInfo }>
 				<InfoHeader buttonOnClick={ () => setOpenModal(true) } />
