@@ -15,6 +15,9 @@ export const Chart: React.FC = () => {
 			<div className={ styles.budgetsContainer }>
 				<BudgetCard />
 			</div>
+			<div className={ styles.addBudget }>
+				+
+			</div>
 		</div>
 		<div className={ styles.chartInfo }>
 			<InfoHeader buttonOnClick={ () => setOpenModal(true) } />

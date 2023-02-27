@@ -16,6 +16,9 @@ export const Categories: React.FC = () => {
 				<div className={ styles.categoriesContainer }>
 					<CategoryCard />
 				</div>
+				<div className={ styles.addBudget }>
+					+
+				</div>
 			</div>
 			<div className={ styles.categoryInfo }>
 				<InfoHeader buttonOnClick={ () => setOpenModal(true) } />

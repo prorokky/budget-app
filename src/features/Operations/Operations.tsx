@@ -17,6 +17,9 @@ export const Operations: React.FC = () => {
 				<div className={ styles.operationsContainer }>
 					<OperationCard />
 				</div>
+				<div className={ styles.addBudget }>
+					+
+				</div>
 			</div>
 			<div className={ styles.operationInfo }>
 				<InfoHeader buttonOnClick={ () => setOpenModal(true) } />
