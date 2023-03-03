@@ -67,11 +67,14 @@
 		"webpack-dev-server": "^4.9.3"
 	},
 	"dependencies": {
+		"@reduxjs/toolkit": "^1.9.3",
+		"@types/react-redux": "^7.1.25",
 		"chart.js": "^4.2.1",
 		"react": "^18.2.0",
 		"react-chartjs-2": "^5.2.0",
 		"react-dom": "^18.2.0",
 		"react-modal": "^3.16.1",
+		"react-redux": "^8.0.5",
 		"react-router-dom": "^6.3.0",
 		"typescript": "^4.7.4"
 	}
