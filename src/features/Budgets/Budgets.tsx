@@ -6,11 +6,13 @@ import { InfoHeader } from '@components/InfoHeader'
 import { ModalComponent } from '@components/Modal'
 import React, { useState } from 'react'
 
+import { useAppSelector } from '../../hooks'
 import { BudgetCard, MoneyCard } from './components'
 import styles from './styles/Budgets.module.less'
 
 export const Budgets: React.FC = () => {
 	const [isOpenModal, setOpenModal] = useState<boolean>(false)
+	const budgets = useAppSelector((state) => state.appSlice.budgets)
 
 	const closeModal = () => {
 		setOpenModal(false)
@@ -21,7 +23,7 @@ export const Budgets: React.FC = () => {
 			<div className={ styles.listOfBudgets }>
 				<Header headerName='Budgets' />
 				<div className={ styles.budgetsContainer }>
-					<BudgetCard />
+					{ budgets.map((budget) => <BudgetCard budget={ budget } />) }
 				</div>
 				<div className={ styles.addBudget }>
 					+
