@@ -4,4 +4,7 @@ export type Budget = {
 
 export type AppState = {
 	budgets: Budget[];
+	budgetNameInput: string;
+	budgetSumInput: string;
+	budgetDateInput: string;
 }

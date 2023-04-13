@@ -7,6 +7,8 @@
 			"@styles/*": ["src/styles/*"],
 			"@assets/*": ["src/assets/*"],
 			"@features/*": ["src/features/*"],
+			"@store/*": ["src/store/*"],
+			"@src/*": ["src/*"],
 		},
 		"target": "es6",
 		"lib": [

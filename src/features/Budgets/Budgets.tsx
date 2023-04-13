@@ -7,11 +7,12 @@ import { ModalComponent } from '@components/Modal'
 import React, { useState } from 'react'
 
 import { useAppSelector } from '../../hooks'
-import { BudgetCard, MoneyCard } from './components'
+import { AddBudget, BudgetCard, MoneyCard } from './components'
 import styles from './styles/Budgets.module.less'
 
 export const Budgets: React.FC = () => {
 	const [isOpenModal, setOpenModal] = useState<boolean>(false)
+	const [isOpenAddBudgetModal, setOpenAddBudgetModal] = useState<boolean>(false)
 	const budgets = useAppSelector((state) => state.appSlice.budgets)
 
 	const closeModal = () => {
@@ -25,7 +26,11 @@ export const Budgets: React.FC = () => {
 				<div className={ styles.budgetsContainer }>
 					{ budgets.map((budget) => <BudgetCard budget={ budget } />) }
 				</div>
-				<div className={ styles.addBudget }>
+				<div
+					className={ styles.addBudget }
+					role='button'
+					onClick={ () => setOpenAddBudgetModal(true) }
+				>
 					+
 				</div>
 			</div>
@@ -78,6 +83,12 @@ export const Budgets: React.FC = () => {
 				</div>
 			</div>
 			<ModalComponent
+				isOpen={ isOpenAddBudgetModal }
+				closeModal={ () => setOpenAddBudgetModal(false) }
+			>
+				<AddBudget setOpenAddBudgetModal={ setOpenAddBudgetModal } />
+			</ModalComponent>
+			<ModalComponent
 				isOpen={ isOpenModal }
 				closeModal={ () => closeModal() }
 			>
@@ -96,7 +107,7 @@ export const Budgets: React.FC = () => {
 					</div>
 					<p className={ styles.date }>14.07.2022, 23:15</p>
 					<input placeholder='RUB' value='' />
-					{ /* TODO: добавить геолокацию покупки
+					{ /* TODO: add geolocation
 					<div>
 						гео
 					</div> */ }

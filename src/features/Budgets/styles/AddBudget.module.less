@@ -1,0 +1,48 @@
+@import '@styles/_variables.less';
+
+.modalContainer {
+	display: flex;
+	flex-direction: column;
+
+	.title {
+		margin-top: 5px;
+		margin-bottom: 15px;
+		text-align: center;
+		font-size: 20px;
+		line-height: 25px;
+	}
+
+	input {
+		text-align: center;
+		border: none;
+		font-family: 'Roboto';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 50px;
+		line-height: 60px;
+		outline: none;
+		margin-bottom: 15px;
+	}
+
+	input[type="search"]::-webkit-input-placeholder {
+		color: @p-grey-color;
+	}
+
+	input[type="search"]::-moz-placeholder {
+		color: @p-grey-color;
+	}
+
+	.save {
+		height: 25px;
+		width: 100%;
+		text-align: center;
+		background-color: @screens-background-color;
+		color: @p-blue-color;
+		font-size: 20px;
+		line-height: 25px;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
