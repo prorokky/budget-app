@@ -20,7 +20,7 @@ export const AddBudget: React.FC<AddBudgetProps> = ({setOpenAddBudgetModal}) => 
 	const budgetDateInput = useAppSelector((state) => state.appSlice.budgetDateInput)
 
 	const onClickHandle = () => {
-		dispatch(saveBudget())
+		dispatch(saveBudget(budgetNameInput, budgetSumInput, budgetDateInput))
 		setOpenAddBudgetModal(false)
 	}
 
@@ -44,7 +44,7 @@ export const AddBudget: React.FC<AddBudgetProps> = ({setOpenAddBudgetModal}) => 
 
 	return(
 		<div className={ styles.modalContainer }>
-			<p className={ styles.title }>Input budget name</p>
+			<h6 className={ styles.title }>Input budget name</h6>
 			<input
 				placeholder='BUDGET'
 				value={ budgetNameInput }

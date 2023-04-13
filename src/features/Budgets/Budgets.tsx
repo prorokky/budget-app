@@ -1,12 +1,14 @@
 import Minus from '@assets/Budgets/minus.svg'
 import Plus from '@assets/Budgets/plus.svg'
 import { Button } from '@components/Button'
+import { Error } from '@components/Error'
 import { Header } from '@components/Header'
 import { InfoHeader } from '@components/InfoHeader'
 import { ModalComponent } from '@components/Modal'
+import { setError } from '@store/appSlice'
 import React, { useState } from 'react'
 
-import { useAppSelector } from '../../hooks'
+import { useAppDispatch, useAppSelector } from '../../hooks'
 import { AddBudget, BudgetCard, MoneyCard } from './components'
 import styles from './styles/Budgets.module.less'
 
@@ -14,9 +16,18 @@ export const Budgets: React.FC = () => {
 	const [isOpenModal, setOpenModal] = useState<boolean>(false)
 	const [isOpenAddBudgetModal, setOpenAddBudgetModal] = useState<boolean>(false)
 	const budgets = useAppSelector((state) => state.appSlice.budgets)
+	const error = useAppSelector((state) => state.appSlice.error)
+	const dispatch = useAppDispatch()
 
 	const closeModal = () => {
 		setOpenModal(false)
+	}
+
+	const onCloseError = () => {
+		dispatch(setError({
+			code: -1,
+			message: '',
+		}))
 	}
 
 	return (
@@ -82,6 +93,12 @@ export const Budgets: React.FC = () => {
 					</div>
 				</div>
 			</div>
+			<ModalComponent
+				isOpen={ error.code !== -1 }
+				closeModal={ onCloseError }
+			>
+				<Error code={ error.code } message={ error.message } onCloseFunc={ onCloseError } />
+			</ModalComponent>
 			<ModalComponent
 				isOpen={ isOpenAddBudgetModal }
 				closeModal={ () => setOpenAddBudgetModal(false) }

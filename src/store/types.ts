@@ -1,5 +1,7 @@
 export type Budget = {
 	name: string;
+	sum: number;
+	date: number;
 }
 
 export type AppState = {
@@ -7,4 +9,8 @@ export type AppState = {
 	budgetNameInput: string;
 	budgetSumInput: string;
 	budgetDateInput: string;
+	error: {
+		code: number;
+		message: string;
+	};
 }

@@ -7,6 +7,10 @@ export const initialState: AppState = {
 	budgetNameInput: '',
 	budgetSumInput: '',
 	budgetDateInput: '',
+	error: {
+		code: -1,
+		message: '',
+	},
 }
 
 export const appSlice = createSlice({
@@ -25,9 +29,18 @@ export const appSlice = createSlice({
 		onChangeBudgetDateExpireInput: (state, action: PayloadAction<string>) => {
 			state.budgetDateInput = action.payload
 		},
+		setError: (state, action: PayloadAction<{ code: number; message: string }>) => {
+			state.error = action.payload
+		},
 	},
 })
 
-export const {addBudget, onChangeBudgetNameInput, onChangeBudgetSumInput, onChangeBudgetDateExpireInput} = appSlice.actions
+export const {
+	addBudget,
+	onChangeBudgetNameInput,
+	onChangeBudgetSumInput,
+	onChangeBudgetDateExpireInput,
+	setError,
+} = appSlice.actions
 
 export const appSliceReducer = appSlice.reducer
