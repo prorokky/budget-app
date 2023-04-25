@@ -4,7 +4,10 @@ import { Budget } from './types'
 
 export const saveBudget = (name: string, sum: string, date: string) =>
 	(dispatch: AppDispatch) => {
-		const timestampDate = Date.parse(date)
+		const month = date.split('/')[1]
+		const day = date.split('/')[0]
+		const year = date.split('/')[2]
+		const timestampDate = Date.parse(`${month}/${day}/${year}`)
 		const sumNumber = Number(sum)
 
 		if (!timestampDate || !sumNumber) {
