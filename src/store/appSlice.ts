@@ -3,7 +3,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { AppState, Budget  } from './types'
 
 export const initialState: AppState = {
-	budgets: [],
+	budgets: [{
+		name: 'budget',
+		sum: 123,
+		date: 1683234000000,
+		spendSum: 0,
+	}],
 	budgetNameInput: '',
 	budgetSumInput: '',
 	budgetDateInput: '',

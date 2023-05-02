@@ -23,6 +23,7 @@ export const saveBudget = (name: string, sum: string, date: string) =>
 			name,
 			sum: sumNumber,
 			date: timestampDate,
+			spendSum: 0,
 		}
 
 		dispatch(appSlice.actions.addBudget(budgetObj))

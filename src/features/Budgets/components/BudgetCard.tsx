@@ -5,9 +5,10 @@ import styles from '../styles/BudgetCard.module.less'
 
 type BudgetCradProps = {
 	budget: Budget;
+	setActiveBudget?: (index: Budget) => void;
 }
 
-export const BudgetCard: React.FC<BudgetCradProps> = ({budget}) => {
+export const BudgetCard: React.FC<BudgetCradProps> = ({budget, setActiveBudget}) => {
 	const [daysLeft, setDaysLeft] = useState<number>()
 
 	useEffect(() => {
@@ -22,7 +23,7 @@ export const BudgetCard: React.FC<BudgetCradProps> = ({budget}) => {
 
 
 	return (
-		<div className={ styles.card }>
+		<div role='button' className={ styles.card } onClick={ () => setActiveBudget && setActiveBudget(budget) }>
 			<div className={ styles.budgetInfo }>
 				<div className={ styles.icon }>
 					<p>🔥</p>
