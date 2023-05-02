@@ -10,6 +10,7 @@ type BudgetCradProps = {
 
 export const BudgetCard: React.FC<BudgetCradProps> = ({budget, setActiveBudget}) => {
 	const [daysLeft, setDaysLeft] = useState<number>()
+	const [leftPercent, setLeftPercent] = useState<number>(0)
 
 	useEffect(() => {
 		const today = new Date()
@@ -20,6 +21,12 @@ export const BudgetCard: React.FC<BudgetCradProps> = ({budget, setActiveBudget})
 			setDaysLeft(differenceInDays)
 		} else setDaysLeft(0)
 	}, [budget.date])
+
+	useEffect(() => {
+		const calcLeftPercent = Number.parseFloat(((1 - budget.spendSum / budget.sum) * 100).toFixed(2))
+
+		setLeftPercent(calcLeftPercent)
+	}, [budget.spendSum, budget.sum])
 
 
 	return (
@@ -40,9 +47,12 @@ export const BudgetCard: React.FC<BudgetCradProps> = ({budget, setActiveBudget})
 					{ budget.sum } RUB
 				</p>
 			</div>
-			<div className={ styles.budgetRemainderLine } />
+			<div className={ styles.budgetRemainderContainer }>
+				<div className={ styles.budgetRemainderLineLeft } style={ { width: `${leftPercent}%` } } />
+				<div className={ styles.budgetRemainderLineSpend } style={ { width: `calc(100% - ${leftPercent}%)` } } />
+			</div>
 			<p className={ styles.budgetRemainderPercent }>
-				100%
+				{ leftPercent }%
 			</p>
 		</div>
 	)

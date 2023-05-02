@@ -7,7 +7,7 @@ export const initialState: AppState = {
 		name: 'budget',
 		sum: 123,
 		date: 1683234000000,
-		spendSum: 0,
+		spendSum: 12,
 	}],
 	budgetNameInput: '',
 	budgetSumInput: '',
