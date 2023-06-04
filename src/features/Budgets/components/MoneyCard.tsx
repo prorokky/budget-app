@@ -30,7 +30,10 @@ export const MoneyCard: React.FC<MoneyCardProps> = ({ sum, spendSum, date }) => 
 
 	return (
 		<div className={ styles.budgetDetails }>
-			<p className={ styles.withinBudget }>You are within the budget</p>
+			{ spendSum <= sum ?
+				<p className={ styles.withinBudget }>You are within the budget</p>
+				: <p className={ styles.outBudget }>You are out of budget</p>
+			}
 			<div className={ styles.moneyCard }>
 				<div className={ styles.top }>
 					<div className={ styles.topLeft }>
