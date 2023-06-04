@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './Header.module.less'
 
 type HeaderProps = {
-	headerName: 'Budgets' | 'Operations' | 'Categories';
+	headerName: 'Budgets' | 'Operations' | 'Categories' | 'Charts';
 }
 
 export const Header: React.FC<HeaderProps> = ({ headerName }) => (

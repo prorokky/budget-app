@@ -9,6 +9,7 @@
 	border-radius: 6px;
 	display: flex;
 	flex-direction: column;
+	cursor: pointer;
 
 	.budgetInfo {
 		margin: 10px 15px 5px 15px;
@@ -48,12 +49,27 @@
 		}
 	}
 
-	.budgetRemainderLine {
-		margin: 0px 15px 5px 15px;
-		border-radius: 6px;
-		height: 10px;
-		background-color: @green-color;
+	.budgetRemainderContainer {
+		display: flex;
+		width: calc(100% - 30px);
+		padding: 0px 15px 5px 15px;
+		
+		.budgetRemainderLine {
+			&Left, &Spend {
+				border-radius: 6px;
+				height: 10px;
+			}
+	
+			&Left {
+				background-color: @green-color;
+			}
+	
+			&Spend {
+				background-color: @p-grey-color;
+			}
+		}
 	}
+	
 
 	.budgetRemainderPercent {
 		margin: 0px 15px 5px 15px;

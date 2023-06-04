@@ -1,0 +1,36 @@
+@import '@styles/_variables.less';
+
+.container {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+
+	h6 {
+		margin: 10px;
+		color: @red-color;
+	}
+
+	.message {
+		margin: 10px;
+	}
+
+	.close {
+		height: 25px;
+		width: 100%;
+		text-align: center;
+		background-color: #E9E9E9;
+		color: #46A3BA;
+		font-size: 20px;
+		line-height: 25px;
+		border: none;
+		cursor: pointer;
+
+		&:active {
+			border: none;
+		}
+
+		&:focus {
+			border: none;
+		}
+	}
+}
