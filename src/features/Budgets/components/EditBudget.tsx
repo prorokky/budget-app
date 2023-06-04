@@ -1,64 +1,64 @@
 import { useAppDispatch, useAppSelector } from '@src/hooks'
-import { saveBudget } from '@store/actions'
+import { editBudget } from '@store/actions'
 import {
-	onChangeBudgetDateExpireInput,
-	onChangeBudgetNameInput,
-	onChangeBudgetSumInput,
+	onChangeBudgetDateExpireEdit,
+	onChangeBudgetNameEdit,
+	onChangeBudgetSumEdit,
 } from '@store/appSlice'
 import React from 'react'
 
 import styles from '../styles/AddBudget.module.less'
 
 type AddBudgetProps = {
-	setOpenAddBudgetModal: (setOpen: boolean) => void;
+	setOpenEditBudgetModal: (setOpen: boolean) => void;
 }
 
-export const AddBudget: React.FC<AddBudgetProps> = ({setOpenAddBudgetModal}) => {
+export const EditBudget: React.FC<AddBudgetProps> = ({setOpenEditBudgetModal}) => {
 	const dispatch = useAppDispatch()
-	const budgetNameInput = useAppSelector((state) => state.appSlice.budgetNameInput)
-	const budgetSumInput = useAppSelector((state) => state.appSlice.budgetSumInput)
-	const budgetDateInput = useAppSelector((state) => state.appSlice.budgetDateInput)
+	const budgetNameEdit = useAppSelector((state) => state.appSlice.budgetNameEdit)
+	const budgetSumEdit = useAppSelector((state) => state.appSlice.budgetSumEdit)
+	const budgetDateEdit = useAppSelector((state) => state.appSlice.budgetDateEdit)
 
 	const onClickHandle = () => {
-		dispatch(saveBudget(budgetNameInput, budgetSumInput, budgetDateInput))
-		setOpenAddBudgetModal(false)
+		dispatch(editBudget(budgetNameEdit, budgetSumEdit, budgetDateEdit))
+		setOpenEditBudgetModal(false)
 	}
 
 	const onChangeNameHandle = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const name: string = event.target.value.toString()
 
-		dispatch(onChangeBudgetNameInput(name))
+		dispatch(onChangeBudgetNameEdit(name))
 	}
 
 	const onChangeSumHandle = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const sum: string = event.target.value.toString()
 
-		dispatch(onChangeBudgetSumInput(sum))
+		dispatch(onChangeBudgetSumEdit(sum))
 	}
 
 	const onChangeDateHandle = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const date: string = event.target.value.toString()
 
-		dispatch(onChangeBudgetDateExpireInput(date))
+		dispatch(onChangeBudgetDateExpireEdit(date))
 	}
 
 	return(
 		<div className={ styles.modalContainer }>
-			<h6 className={ styles.title }>Input budget info</h6>
+			<h6 className={ styles.title }>Edit budget info</h6>
 			<input
 				placeholder='BUDGET'
-				value={ budgetNameInput }
+				value={ budgetNameEdit }
 				onChange={ (event) => onChangeNameHandle(event) }
 			/>
 			<input
 				placeholder='SUMM'
 				type='number'
-				value={ budgetSumInput }
+				value={ budgetSumEdit }
 				onChange={ (event) => onChangeSumHandle(event) }
 			/>
 			<input
 				placeholder='DD/MM/YYYY EXPIRE'
-				value={ budgetDateInput }
+				value={ budgetDateEdit }
 				onChange={ (event) => onChangeDateHandle(event) }
 			/>
 			{ /* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */ }

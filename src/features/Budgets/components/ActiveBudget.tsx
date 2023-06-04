@@ -1,8 +1,9 @@
-import { Button, InfoHeader } from '@components'
+import { Button, InfoHeader, ModalComponent } from '@components'
 import { Budget, Months } from '@store/types'
 import React, { useEffect, useState } from 'react'
 
 import styles from '../styles/ActiveBudget.module.less'
+import { EditBudget } from '.'
 import { MoneyCard } from './MoneyCard'
 
 type ActiveBudgetProps = {
@@ -13,6 +14,7 @@ type ActiveBudgetProps = {
 export const ActiveBudget: React.FC<ActiveBudgetProps> = ({ budget, setOpenModal }) => {
 	const [budgetYear, setBudgetYear] = useState<number>()
 	const [budgetMonth, setBudgetMonth] = useState<string>()
+	const [isOpenEditBudgetModal, setOpenEditBudgetModal] = useState<boolean>(false)
 
 	useEffect(() => {
 		const date = new Date(budget.date)
@@ -28,7 +30,7 @@ export const ActiveBudget: React.FC<ActiveBudgetProps> = ({ budget, setOpenModal
 				<div className={ styles.changeButton }>
 					<Button
 						isLoading={ false }
-						onClick={ () => console.log('button edit clicked') }
+						onClick={ () => setOpenEditBudgetModal(true) }
 						className={ styles.button }
 					>
 						<p>Edit</p>
@@ -69,5 +71,11 @@ export const ActiveBudget: React.FC<ActiveBudgetProps> = ({ budget, setOpenModal
 					</div>
 				</div>
 			</div>
+			<ModalComponent
+				isOpen={ isOpenEditBudgetModal }
+				closeModal={ () => setOpenEditBudgetModal(false) }
+			>
+				<EditBudget setOpenEditBudgetModal={ setOpenEditBudgetModal } />
+			</ModalComponent>
 		</div>)
 }

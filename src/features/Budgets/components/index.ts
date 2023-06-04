@@ -1,4 +1,5 @@
 export { ActiveBudget } from './ActiveBudget'
 export { AddBudget } from './AddBudget'
 export { BudgetCard } from './BudgetCard'
+export { EditBudget } from './EditBudget'
 export { MoneyCard } from './MoneyCard'

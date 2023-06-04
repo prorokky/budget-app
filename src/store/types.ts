@@ -10,6 +10,9 @@ export type AppState = {
 	budgetNameInput: string;
 	budgetSumInput: string;
 	budgetDateInput: string;
+	budgetNameEdit: string;
+	budgetSumEdit: string;
+	budgetDateEdit: string;
 	error: {
 		code: number;
 		message: string;
