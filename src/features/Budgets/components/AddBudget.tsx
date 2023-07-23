@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '@src/hooks'
-import { saveBudget } from '@store/actions'
+import { onChangeBudget } from '@store/actions'
 import {
 	onChangeBudgetDateExpireInput,
 	onChangeBudgetNameInput,
@@ -15,12 +15,11 @@ type AddBudgetProps = {
 
 export const AddBudget: React.FC<AddBudgetProps> = ({setOpenAddBudgetModal}) => {
 	const dispatch = useAppDispatch()
-	const budgetNameInput = useAppSelector((state) => state.appSlice.budgetNameInput)
-	const budgetSumInput = useAppSelector((state) => state.appSlice.budgetSumInput)
-	const budgetDateInput = useAppSelector((state) => state.appSlice.budgetDateInput)
+	const { budgetNameInput, budgetSumInput, budgetDateInput } =
+		useAppSelector((state) => state.appSlice.budgetInput)
 
 	const onClickHandle = () => {
-		dispatch(saveBudget(budgetNameInput, budgetSumInput, budgetDateInput))
+		dispatch(onChangeBudget(budgetNameInput, budgetSumInput, budgetDateInput, false))
 		setOpenAddBudgetModal(false)
 	}
 

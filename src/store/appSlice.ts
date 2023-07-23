@@ -9,12 +9,11 @@ export const initialState: AppState = {
 		date: 1683234000000,
 		spendSum: 12,
 	}],
-	budgetNameInput: '',
-	budgetSumInput: '',
-	budgetDateInput: '',
-	budgetNameEdit: '',
-	budgetSumEdit: '',
-	budgetDateEdit: '',
+	budgetInput: {
+		budgetNameInput: '',
+		budgetSumInput: '',
+		budgetDateInput: '',
+	},
 	operationInput: {
 		budgetNameInput: '',
 		catgoryNameInput: '',
@@ -40,22 +39,13 @@ export const appSlice = createSlice({
 			state.budgets.splice(index, 1, action.payload)
 		},
 		onChangeBudgetNameInput: (state, action: PayloadAction<string>) => {
-			state.budgetNameInput = action.payload
+			state.budgetInput.budgetNameInput = action.payload
 		},
 		onChangeBudgetSumInput: (state, action: PayloadAction<string>) => {
-			state.budgetSumInput = action.payload
+			state.budgetInput.budgetSumInput = action.payload
 		},
 		onChangeBudgetDateExpireInput: (state, action: PayloadAction<string>) => {
-			state.budgetDateInput = action.payload
-		},
-		onChangeBudgetNameEdit: (state, action: PayloadAction<string>) => {
-			state.budgetNameEdit = action.payload
-		},
-		onChangeBudgetSumEdit: (state, action: PayloadAction<string>) => {
-			state.budgetSumEdit = action.payload
-		},
-		onChangeBudgetDateExpireEdit: (state, action: PayloadAction<string>) => {
-			state.budgetDateEdit = action.payload
+			state.budgetInput.budgetDateInput = action.payload
 		},
 		setError: (state, action: PayloadAction<{ code: number; message: string }>) => {
 			state.error = action.payload
@@ -68,9 +58,6 @@ export const {
 	onChangeBudgetNameInput,
 	onChangeBudgetSumInput,
 	onChangeBudgetDateExpireInput,
-	onChangeBudgetNameEdit,
-	onChangeBudgetSumEdit,
-	onChangeBudgetDateExpireEdit,
 	setError,
 } = appSlice.actions
 

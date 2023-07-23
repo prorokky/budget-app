@@ -75,7 +75,7 @@ export const ActiveBudget: React.FC<ActiveBudgetProps> = ({ budget, setOpenModal
 				isOpen={ isOpenEditBudgetModal }
 				closeModal={ () => setOpenEditBudgetModal(false) }
 			>
-				<EditBudget setOpenEditBudgetModal={ setOpenEditBudgetModal } />
+				<EditBudget budget={ budget } setOpenEditBudgetModal={ setOpenEditBudgetModal } />
 			</ModalComponent>
 		</div>)
 }

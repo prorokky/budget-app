@@ -5,6 +5,12 @@ export type Budget = {
 	date: number;
 }
 
+export type BudgetInput = {
+	budgetNameInput: string;
+	budgetSumInput: string;
+	budgetDateInput: string;
+}
+
 export type OperationInput = {
 	budgetNameInput: string;
 	catgoryNameInput: string;
@@ -15,12 +21,7 @@ export type OperationInput = {
 export type AppState = {
 	budgets: Budget[];
 	operationInput: OperationInput;
-	budgetNameInput: string;
-	budgetSumInput: string;
-	budgetDateInput: string;
-	budgetNameEdit: string;
-	budgetSumEdit: string;
-	budgetDateEdit: string;
+	budgetInput: BudgetInput;
 	error: {
 		code: number;
 		message: string;
