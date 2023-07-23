@@ -4,17 +4,18 @@ import React from 'react'
 import styles from './InfoHeader.module.less'
 
 type InfoHeaderProps = {
-	buttonOnClick: () => void;
+	buttonOnClick?: () => void;
+	hasButton?: boolean;
 }
 
-export const InfoHeader: React.FC<InfoHeaderProps> = ({ buttonOnClick }) => (
+export const InfoHeader: React.FC<InfoHeaderProps> = ({ buttonOnClick, hasButton = true }) => (
 	<div className={ styles.container }>
-		<Button
+		{ hasButton && buttonOnClick && <Button
 			isLoading={ false }
 			onClick={ buttonOnClick }
 			className={ styles.button }
 		>
 			<p>+</p>
-		</Button>
+		</Button> }
 	</div>
 )

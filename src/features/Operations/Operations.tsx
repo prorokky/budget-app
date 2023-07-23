@@ -1,14 +1,12 @@
-
-import { Header } from '@components/Header'
-import { InfoHeader } from '@components/InfoHeader'
+import { Header, InfoHeader, ModalComponent } from '@components'
 import React, { useState } from 'react'
 
-import { OperationInfo } from './components'
+import { AddOperation, OperationInfo } from './components'
 import { OperationCard } from './components/OperationCard'
 import styles from './styles/Operations.module.less'
 
 export const Operations: React.FC = () => {
-	const [_isOpenModal, setOpenModal] = useState<boolean>(false)
+	const [isOpenAddOperationModal, setOpenAddOperationModal] = useState<boolean>(false)
 
 	return (
 		<div className={ styles.container }>
@@ -17,14 +15,23 @@ export const Operations: React.FC = () => {
 				<div className={ styles.operationsContainer }>
 					<OperationCard />
 				</div>
-				<div className={ styles.addBudget }>
+				<div
+					className={ styles.addOperation }
+					role='button'
+					onClick={ () => setOpenAddOperationModal(true) }>
 					+
 				</div>
 			</div>
 			<div className={ styles.operationInfo }>
-				<InfoHeader buttonOnClick={ () => setOpenModal(true) } />
+				<InfoHeader hasButton={ false } />
 				<OperationInfo />
 			</div>
+			<ModalComponent
+				isOpen={ isOpenAddOperationModal }
+				closeModal={ () => setOpenAddOperationModal(false) }
+			>
+				<AddOperation setOpenAddOperationModal={ setOpenAddOperationModal } />
+			</ModalComponent>
 		</div>
 	)
 }

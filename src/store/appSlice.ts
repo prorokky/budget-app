@@ -15,6 +15,12 @@ export const initialState: AppState = {
 	budgetNameEdit: '',
 	budgetSumEdit: '',
 	budgetDateEdit: '',
+	operationInput: {
+		budgetNameInput: '',
+		catgoryNameInput: '',
+		sumAmountInput: '',
+		dateInput: '',
+	},
 	error: {
 		code: -1,
 		message: '',
