@@ -77,12 +77,12 @@ export const Budgets: React.FC = () => {
 						<p
 							onClick={ () => setOpenModal(false) }
 							className={ styles.back }
-						>Назад</p>
+						>Back</p>
 						<div className={ styles.icons }>
 							<Minus />
 							<Plus />
 						</div>
-						<p className={ styles.categories }>Категория</p>
+						<p className={ styles.categories }>Category</p>
 					</div>
 					<p className={ styles.date }>14.07.2022, 23:15</p>
 					<input placeholder='RUB' value='' />
@@ -90,7 +90,7 @@ export const Budgets: React.FC = () => {
 					<div>
 						гео
 					</div> */ }
-					<p className={ styles.save }>Cохранить</p>
+					<p className={ styles.save }>Save</p>
 				</div>
 			</ModalComponent>
 		</div>
